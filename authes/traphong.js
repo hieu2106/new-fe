@@ -54,6 +54,7 @@ function addToTable(table, ...rowDatas) {
         }
       }
     }
+    console.log(e);
   };
 
   $("#btnReceipt").on("click", function () {

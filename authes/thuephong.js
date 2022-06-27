@@ -79,7 +79,7 @@
     cell4.innerHTML = giathue;
     cell5.innerHTML = ngayden;
     cell6.innerHTML = ngaydi;
-    cell7.innerHTML = `<button class="btn btn-danger" data-id="${maphong}">Xóa</button>`;
+    cell7.innerHTML = `<button class="btn btn-danger" data-id="${maphong}"><i class="icon-trash"></i></button>`;
   }
 
   function reloadSelect(array = [], selectbox, textKey = "", valueKey = "") {
@@ -88,6 +88,7 @@
     array.forEach((kh) => addOptions(selectbox, kh[textKey], kh[valueKey]));
     selectbox.onchange && selectbox.onchange();
   }
+
   document.querySelector("[name=maphong]").onchange = () => {
     const dientich = document.querySelector("[name=dientich]");
     const giathue = document.querySelector("[name=giathue]");
@@ -156,6 +157,20 @@
       else {
         window.location.href = "basic-tabletraphong.html";
       }
+    });
+  });
+
+  document.getElementById("dongia").addEventListener("keyup", function () {
+    document.getElementById("tiencoc").innerHTML = this.value;
+  });
+
+  document.querySelector("#btn-two").addEventListener("click", function () {
+    html2canvas(document.querySelector("#example-bill")).then((canvas) => {
+      let base64image = canvas.toDataURL("image/png");
+      // console.log(base64image);
+      let pdf = new jsPDF("p", "px", [1320, 900]);
+      pdf.addImage(base64image, "PNG", 15, 15, 1110, 360);
+      pdf.save("thuephong.pdf");
     });
   });
 })();
