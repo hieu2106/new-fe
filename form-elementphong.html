@@ -392,13 +392,13 @@
 
   document.getElementById('btnSubmit').addEventListener('click', function () {
 			let errors = [];
-			const maphong = document.querySelector("input[name=maph]").value.trim();
+			const maphong = document.querySelector("input[name=maphong]").value.trim();
 
 			const regexMaPh = /^PH[a-z0-9]+$/i;
 			if (!regexMaPh.test(maphong)) {
 				errors.push({
-					field: 'maph',
-					error: 'Invalid maph'
+					field: 'maphong',
+					error: 'Invalid maphong'
 				});
 				// console.log(errors);
 				alert("Mã phòng phải bắt đầu bằng PH")

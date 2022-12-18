@@ -9,7 +9,7 @@
 
   if (new Date(tokens.expiresIn) < new Date()) {
     // 26.91.201.28
-    fetch("http://localhost:3000/api/taikhoan/refresh-token", {
+    fetch("http://192.168.1.10:4000/api/taikhoan/refresh-token", {
       method: "POST",
       body: JSON.stringify({
         refreshToken: tokens.refreshToken,

@@ -416,9 +416,9 @@
         };
         updateTKByUsername(dataPost).then((data) => {
           console.log(data);
-          if (data.error) {
+          if (data.message) {
             // do something on error
-            alert(data.error.sqlMessage);
+            alert(data.message);
           }
           // window.location.href = "basic-tabledv.html";
         });
